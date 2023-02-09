@@ -1,0 +1,27 @@
+﻿#containerPrincipal {
+    justify-content:center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#container1 {
+    width: 800px;
+    height: 800px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #666;
+}
+#container2 {
+    border: groove;
+    width: 400px;
+    height: 800px;
+    margin-left: 50px;
+    background-color: aqua;
+}
+#container3 {
+    border: groove;
+    width: 400px;
+    height: 800px;
+    margin-right: 50px;
+    background-color: burlywood;
+}

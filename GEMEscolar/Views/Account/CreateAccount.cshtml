@@ -1,0 +1,98 @@
+﻿@using GEMEscolar.Infra.Models
+@model UserModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    
+}
+
+<head>
+    <link href="~/css/Utils.css" rel="stylesheet"/>
+</head>
+<body>
+    <section class="vh-50">
+      <div class="container py-5 h-100">
+        <div class="h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row d-flex justify-content-center align-items-center row g-0">
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+                    <form class="needs-validation" novalidate asp-action="CreateAccount" autocomplete="off">
+
+                        <div class="d-flex align-items-center justify-content-center mb-3 pb-1">
+                            <span class="h1 fw-bold mb-0 text-center">Crie sua conta</span>
+                        </div>
+                        <h5 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;">Informe seus dados corretamente</h5>
+                        
+                        <div class="row">  
+                            <div class="col-md-12">  
+                                <div class="form-group">  
+                                    @Html.Raw(@ViewBag.Alert)  
+                                </div>  
+                            </div>  
+                        </div> 
+
+                        <div class="h5">
+                            <input type="text" asp-for="Name" class="form-control form-control-lg" placeholder="Digite seu Nome completo" required />
+                            <div class="invalid-feedback">
+                                Por favor digite seu nome completo.
+                            </div>
+                        </div>
+                        <div class="h5">
+                            <input type="email" asp-for="EMail" class="form-control form-control-lg" placeholder="Digite seu E-Mail" required />
+                            <div class="invalid-feedback">
+                                Por favor digite seu E-Mail.
+                            </div>
+                        </div>
+                        <div class="h5">
+                            <input type="password" asp-for="Password" class="form-control form-control-lg" placeholder="Digite sua Senha" required />
+                            <div class="invalid-feedback">
+                                Por favor digite sua senha.
+                            </div>
+                        </div>
+                        <div class="h5">
+                            <input type="password" asp-for="ConfirmPassword" class="form-control form-control-lg" placeholder="Confirme sua senha" required />
+                            <div class="invalid-feedback">
+                                Por favor confirme sua senha.
+                            </div>
+                        </div>
+                        
+                        <br />
+                        <div class="row justify-content-center">
+                            <input type="submit" value="Criar" class="btn btn-dark btn-lg btn-block" />
+                            <a asp-action="Index" class="btn btn-secondary btn-lg btn-block">Voltar</a>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        $(".alert").alert('close')
+    
+    </script>
+</body>

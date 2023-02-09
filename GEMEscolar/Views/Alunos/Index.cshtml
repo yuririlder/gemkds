@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@model GEMEscolar.Core.Models.CriarAlunoResponsavelModelo
+
+<section class="vh-50">
+    <div class="container py-5 ">
+        <div class="col ">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="row d-flex justify-content-center align-items-center row g-0">
+                    <div class="card-body p-4 p-lg-5 text-black">
+
+                        <div class="text-center d-flex justify-content-center">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="h1 fw-bold mb-0">Adicionar novo aluno</span>
+                            </div>
+                        </div>
+                        <br />
+
+                            <form asp-action="Index" asp-controller="Alunos">
+                                <div class="row justify-content-center">
+                                    <div class="h5">
+                                        <input type="number" asp-for="DocumentoResponsavel" class="form-control form-control-lg" 
+                                        placeholder="CPF do responsável" required />
+                                        <div class="invalid-feedback">
+                                            Digite o CPF do responsável.
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline-dark m-2" type="submit">Pesquisar</button>
+                                </div>                                
+                            </form>
+
+                        @using (Html.BeginForm("CriarAluno", "Alunos", FormMethod.Post, Model))
+                        {
+                            <div class="card">
+                                <h5 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;">Responsavel</h5>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Nome do responsavel</label>
+                                        <input type="text" asp-for="NomeResponsavel" class="form-control form-control-lg" placeholder="Nome do responsável" 
+                                        autocomplete="off" required />
+                                        <div class="invalid-feedback">
+                                            Digite o Nome do responsável.
+                                        </div>
+                                    </div>
+                                    <div class="h5">
+                                        <label>Cidade</label>
+                                        <input type="text" asp-for="CidadeResponsavel" class="form-control form-control-lg" placeholder="Cidade" 
+                                        autocomplete="off" required />
+                                        <div class="invalid-feedback">
+                                            Digite a cidade do responsável.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Endereço</label>
+                                        <input type="text" asp-for="EnderecoResponsavel" class="form-control form-control-lg" placeholder="Endereço" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o endereço do responsável.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Estado</label>
+                                        <input type="text" asp-for="EstadoResponsavel" class="form-control form-control-lg" placeholder="Estado" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o Estado do responsável.
+                                        </div>
+                                    </div>
+                                    <div class="h5">
+                                        <label>Telefone</label>
+                                        <input type="tel" asp-for="TelefoneResponsavel" class="form-control form-control-lg" placeholder="Telefone" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o Telefone do responsável.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Telefone 2</label>
+                                        <input type="tel" asp-for="TelefoneResponsavel2" class="form-control form-control-lg" placeholder="Telefone" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o Telefone do responsável.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>CPF</label>
+                                        <input type="text" asp-for="Cpf" class="form-control form-control-lg" placeholder="Cpf" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o CPF do responsável.
+                                        </div>
+                                    </div>
+                                    <div class="h5">
+                                        <label>RG</label>
+                                        <input type="tel" asp-for="Rg" class="form-control form-control-lg" placeholder="RG" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o RG do responsável.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card">
+                                <h5 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;">Aluno</h5>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Nome do aluno</label>
+                                        <input type="text" asp-for="NomeAluno" class="form-control form-control-lg" placeholder="Nome do Aluno" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o Nome do aluno.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Data de Nascimento</label>
+                                        <input type="date" asp-for="DataNascimento" class="form-control form-control-lg" placeholder="Data de nascimento" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite data de nascimento do aluno.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Ano letivo</label>
+                                        <select type="number" asp-for="AnoLetivo" class="form-select form-control form-control-lg" aria-label="Default select example"  required>
+                                          <option selected>Ano letivo</option>
+                                            @{
+                                                for (var ano = DateTime.Now.Year; ano <= (DateTime.Now.Year + 4); ano++){
+                                                    <option value="@ano">@ano</option>
+                                                }
+                                            }
+                                          
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Digite o ano que o aluno vai estudar.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Sexo</label>
+                                        <select type="text" asp-for="Sexo" class="form-select form-control form-control-lg" aria-label="Default select example"  required>
+                                          <option selected>Sexo do aluno</option>
+                                          <option value="M">Masculino</option>
+                                          <option value="F">Feminino</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Digite o Sexo do Aluno.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Naturalidade</label>
+                                        <input type="text" asp-for="Naturalidade" class="form-control form-control-lg" placeholder="Naturalidade"
+                                        autocomplete="off"  required/>
+                                        <div class="invalid-feedback">
+                                            Digite a Naturalidade do aluno.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Observação</label>
+                                        <input type="text" asp-for="Observacao" class="form-control form-control-lg" placeholder="Obs:" 
+                                        autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="h5 mr-3">
+                                        <label>Valor da mensalidade</label>
+                                        <input type="number" asp-for="MensalidadeValor" class="form-control form-control-lg" placeholder="Mensalidade" 
+                                        autocomplete="off"  required />
+                                        <div class="invalid-feedback">
+                                            Digite o valor da mensalidade.
+                                        </div>
+                                    </div>
+                                    <div class="h5 mr-3">
+                                        <label>Desconto em %</label>
+                                        <input type="number" asp-for="DescontaEmPorcentagem" class="form-control form-control-lg" placeholder="Desconto %"
+                                        autocomplete="off"  required/>
+                                        <div class="invalid-feedback">
+                                            Digite a % de desconto que o aluno possui.
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        
+                            <div class="row justify-content-center align-content-xl-center">
+                                <input type="submit" value="Criar" class="btn btn-dark btn-lg btn-block h-25 w-25 mr-3 m-3" />
+                                <a asp-action="Index" asp-controller="Home" class="btn btn-secondary btn-lg btn-block w-25 m-3">Voltar</a>
+                            </div>
+@*                            <div class="text-center">
+                                <button class="btn btn-outline-dark m-2" type="submit">Adicionar</button>
+                            </div>*@
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31825.309
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{EDE1A285-A4E9-4CF3-9D2B-37C8B7D733FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GEMEscolar", "GEMEscolar.csproj", "{4FF8AB35-2AF4-4CDB-A4B8-E0B7644DDBE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GEMEscolar.Infra", "..\Infra\GEMChuch.Infra\GEMEscolar.Infra.csproj", "{F8102E3F-43E2-4DAA-A337-B35B7272A3E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GEMEscolar.Core", "..\Infra\GEMChurch.Core\GEMEscolar.Core.csproj", "{447082DE-D844-4E7F-BD92-1C8C175A1D15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FF8AB35-2AF4-4CDB-A4B8-E0B7644DDBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF8AB35-2AF4-4CDB-A4B8-E0B7644DDBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF8AB35-2AF4-4CDB-A4B8-E0B7644DDBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF8AB35-2AF4-4CDB-A4B8-E0B7644DDBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8102E3F-43E2-4DAA-A337-B35B7272A3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8102E3F-43E2-4DAA-A337-B35B7272A3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8102E3F-43E2-4DAA-A337-B35B7272A3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8102E3F-43E2-4DAA-A337-B35B7272A3E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447082DE-D844-4E7F-BD92-1C8C175A1D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447082DE-D844-4E7F-BD92-1C8C175A1D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447082DE-D844-4E7F-BD92-1C8C175A1D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447082DE-D844-4E7F-BD92-1C8C175A1D15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8102E3F-43E2-4DAA-A337-B35B7272A3E9} = {EDE1A285-A4E9-4CF3-9D2B-37C8B7D733FB}
+		{447082DE-D844-4E7F-BD92-1C8C175A1D15} = {EDE1A285-A4E9-4CF3-9D2B-37C8B7D733FB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8733FDAF-9D82-4D9F-8188-45869645863C}
+	EndGlobalSection
+EndGlobal

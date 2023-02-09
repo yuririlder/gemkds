@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GEMEscolar</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/w3.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Sidebar template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="~/css/SideBar.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <a href="#">Discipulador</a>
+            <div id="close-sidebar">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <div class="sidebar-header">
+            <div class="user-pic">
+              <img class="img-responsive img-rounded" src="~/css/img/YuriRIlder2.jpg"
+                alt="User picture">
+            </div>
+            <div class="user-info">
+              <span class="user-name">Yuri
+                <strong>Rilder</strong>
+              </span>
+              <span class="user-role">Administrator</span>
+              <span class="user-status">
+                <i class="fa fa-circle"></i>
+                <span>Online</span>
+              </span>
+            </div>
+          </div>
+         
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <ul>
+              <li class="header-menu">
+                <span>Menu</span>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Rede</span>
+                  <span class="badge badge-pill badge-warning">Em Criação</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Painel
+                        <span class="badge badge-pill badge-success">Pro</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Discipulado</span>
+                  <span class="badge badge-pill badge-warning">Em Criação</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Painel
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="far fa-folder"></i>
+                  <span>Celula</span>
+                  <span class="badge badge-pill badge-warning">Em Criação</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Painel</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header-menu">
+                <span>Extra</span>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-calendar"></i>
+                  <span>Aniversariantes</span>
+                  <span class="badge badge-pill badge-warning">Em Criação</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Examples</span>
+                  <span class="badge badge-pill badge-warning">Em Criação</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+          <a href="#">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">3</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <a href="Account/Index">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
+      </nav>
+      <!-- sidebar-wrapper  -->
+      <main class="page-content">
+        <div class="container-fluid">
+            @RenderBody()
+
+          <footer class="text-center">
+            <div class="mb-2">
+              <small>
+                © Criado em 2022 <i class="fa fa-heart" style="color:red"></i> by - <a href="https://www.instagram.com/yuririlder">
+                  Yuri Rilder
+                </a>
+              </small>
+            </div>
+          </footer>
+        </div>
+      </main>
+      <!-- page-content" -->
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        $(".sidebar-dropdown > a").click(function() {
+            $(".sidebar-submenu").slideUp(200);
+            if (
+            $(this)
+                .parent()
+                .hasClass("active")
+            ) {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .parent()
+                .removeClass("active");
+            } else {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .next(".sidebar-submenu")
+                .slideDown(200);
+            $(this)
+                .parent()
+                .addClass("active");
+            }
+        });
+
+        $("#close-sidebar").click(function() {
+            $(".page-wrapper").removeClass("toggled");
+        });
+        $("#show-sidebar").click(function() {
+            $(".page-wrapper").addClass("toggled");
+        });                 
+    
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

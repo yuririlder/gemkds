@@ -1,0 +1,59 @@
+﻿@using GEMEscolar.Infra.Models
+@model LoginAccountModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<section class="vh-50">
+    <div class="container py-5 ">
+        <div class="col ">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="row d-flex justify-content-center align-items-center row g-0">
+                    <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">
+
+                            <div class="text-center d-flex justify-content-center">
+                                <div class="d-flex align-items-center mb-3 pb-1">
+                                    <span class="h1 fw-bold mb-0">Login</span>
+                                </div>
+                            </div>
+                                <h5 class="text-center fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre com sua conta</h5>
+
+                            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                            {
+                                <div class="row">  
+                                    <div class="col-md-12">  
+                                        <div class="form-group">  
+                                            @Html.Raw(@ViewBag.Alert)  
+                                        </div>  
+                                    </div>  
+                                </div>
+
+                                <span asp-validation-for="login" class="text-danger small"></span>
+                                <div class="form-outline mb-4">
+                                    <input asp-for="login" type="email" class="form-control form-control-lg" autocomplete="off" 
+                                        placeholder="Digite seu e-mail" required />
+                                </div>
+
+                                <span asp-validation-for="password" class="text-danger small"></span>
+                                <div class="form-outline mb-4">
+                                    <input type="password" asp-for="password" class="form-control form-control-lg" autocomplete="off" 
+                                        placeholder="Digite sua senha" required />
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                                </div>
+                                <div asp-validation-summary="All" class="text-danger small"></div>
+                            }
+
+                            <a class="small text-muted" href="#!">Esqueceu sua senha?</a>
+                            <p class="mb-5 pb-lg-2" style="color: #393f81;">Ainda não tem conta? 
+                                <a asp-controller="Account" asp-action="CreateAccount" style="color: #393f81;">Criar nova conta</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
